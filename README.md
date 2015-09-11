@@ -8,6 +8,8 @@ Doesn't need `jquery`. Works with pure `AngularJs`.
 - You must have an child element;
 - Include the `css` class `.affix`;
 
+The code for both (directive, body and css style) can be found in the 2 files on the project. `index.html` (DOM and CSS) and `directive.js` (directive code).
+
 Currently you can only have one affixed element per page (due to the ID). Somehow it's not working if i set: <br />
 `var affixElement = element;`
 
