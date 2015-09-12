@@ -8,7 +8,6 @@
 					elChild.css('width', elWidth);
 				angular.element($window).bind("scroll", function() {
 					var affixElement = document.getElementById('affix'),
-						xPosition = 0,
 						yPosition = 0;
 					function getPosition(element) {
 						while(element) {
