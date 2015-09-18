@@ -5,7 +5,7 @@ Doesn't need `jquery`. Works with pure `AngularJs`.
 ***How to use*** <br />
 - Include the directive from `directive.js` with your own directives;
 - You must have a parent element with directive `affix-me`;
-- You must have an child element;
+- You must have a child element;
 - Include the `css` class `.affix`;
 
 The code for both (directive, body and css style) can be found in the 2 files on the project. `index.html` (DOM and CSS) and `directive.js` (directive code).
