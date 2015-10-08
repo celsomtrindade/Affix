@@ -1,4 +1,4 @@
-.directive('affixMe', ['$timeout','$window', function($timeout, $window) {
+.directive('affixMe', ['$window', function($window) {
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
