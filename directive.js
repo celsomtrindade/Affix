@@ -1,26 +1,33 @@
-.directive('affixMe', ['$window', function($window) {
+.directive('affixMe', ['$document','$window', function($document,$window) {
 	return {
 		restrict: 'A',
 		link: function(scope, element, attrs) {
-			scope.width = element.prop('offsetWidth');
-			var elWidth = scope.width + 'px',
-				elChild = angular.element(element[0].querySelector(':first-child'));
-				elChild.css('width', elWidth);
-			angular.element($window).bind("scroll", function() {
-				var myElem = element[0];
-					yPosition = 0;
-				function getPosition(element) {
-					while(element) {
-						yPosition += (element.offsetTop - element.scrollTop + element.clientTop);
-						element = element.offsetParent;
-					}
-				}
-				getPosition(myElem);
-				if (yPosition >= 0) {
-					elChild.removeClass('affix');
-				} else if ( yPosition < 0) {
-					elChild.addClass('affix');
+			var child = element.children(0);
+
+			function checkPosition() {
+				var 
+					scrollHeight 	= $document.prop( 'height' ),
+					scrollTop 		= angular.element($window).prop("pageYOffset"),
+					positionTop 	= attrs.offsetTop ? attrs.offsetTop : element.prop('offsetTop');
+
+				if (scrollTop >= positionTop) {
+					child.addClass('sticky');
+				} else {
+					child.removeClass('sticky');
 				};
+			};
+
+			function resizeChild(e, c) {
+				e.css({height: c[0].offsetHeight + 'px'});
+				c.css({width: e[0].offsetWidth + 'px'});
+			};
+
+			angular.element($window).bind('scroll', checkPosition);
+			angular.element($window).on('resize', function() {
+				resizeChild(element, child);
+			});
+			angular.element($document).ready(function() {
+				resizeChild(element, child);
 			});
 		}
 	};
