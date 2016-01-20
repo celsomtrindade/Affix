@@ -11,9 +11,9 @@
 					positionTop 	= attrs.offsetTop ? attrs.offsetTop : element.prop('offsetTop');
 
 				if (scrollTop >= positionTop) {
-					child.addClass('sticky');
+					child.addClass('affix');
 				} else {
-					child.removeClass('sticky');
+					child.removeClass('affix');
 				};
 			};
 
