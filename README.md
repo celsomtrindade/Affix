@@ -39,4 +39,4 @@ If anyone can help with this, it would be great!
 
 Note: I'm not an advanced user in `javascript/AngularJs`, this code was built with a lot of research and a lot of try/errors. So if anyone could help with this, it would be great.
 
-The reason why i did this is because i didn't found a simple affix effect without using Jquery or other external library.
+The reason why I did this is because I didn't found a simple affix effect without using Jquery or other external library.
